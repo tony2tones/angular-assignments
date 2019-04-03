@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
 import { TitleCasePipe } from './pipe/title-case.pipe';
+import { LikesComponent } from './likes/likes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
-    TitleCasePipe
+    TitleCasePipe,
+    LikesComponent
   ],
   imports: [
     BrowserModule,
