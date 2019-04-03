@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { prepareSyntheticListenerFunctionName } from "@angular/compiler/src/render3/util";
 
 @Pipe({
   name: "titleCase"
@@ -10,20 +9,22 @@ export class TitleCasePipe implements PipeTransform {
 
     let words = value.split(" ");
     for (var i = 0; i < words.length; i++) {
-      if (i > 0 && this.isPrepersition(words[i])) {
-        words[i] = words[i].toLowerCase();
+      let word = words[i];
+      if (i > 0 && this.isPrepersition(word)) {
+        words[i] = word.toLowerCase();
       } else {
-        words[i] = this.formatWords(words[i]);
+        words[i] = this.formate(word);
       }
     }
     return words.join(" ");
   }
+
   private isPrepersition(word: string): boolean {
-    let prepersitions = ["of", "the"];
-    return prepersitions.includes(word.toLowerCase());
+    let prep = ["of", "the"];
+    return prep.includes(word.toLowerCase());
   }
 
-  private formatWords(word:string) {
-    return (word.substr(0,1).toUpperCase() + word.substr(1).toLowerCase());
+  private formate(word: string): string {
+    return word.substr(0, 1).toUpperCase() + word.substr(1).toLowerCase();
   }
 }
