@@ -1,5 +1,41 @@
-<i class="fa-heart" 
-  [ngClass]="{
-    'fas-heart':isLiked,
-    'far-heart':!isLiked,
-  }"></i>
+<!-- <div class="contianer">
+  <i
+    class="fa-heart"
+    [class.fas]="isActive"
+    [class.far]="!isActive"
+    (click)="onClick()"
+    >{{ likesCount }}</i
+  >
+</div> -->
+<div class="contianer">
+  <div class="row row-margin">
+    <div class="col-sm"></div>
+
+    <div class="card col-sm" style="width: 18rem; text-align: center;">
+      <i
+        class="fa-heart"
+        [class.fas]="isActive"
+        [class.far]="!isActive"
+        (click)="onClick()"
+      ></i>
+      <div class="card-body">
+        <h5 class="card-title">Do you like me?</h5>
+        <p class="card-text">{{ likesCount }}</p>
+        <div>
+          <div class="row">
+            <a href="#" class="btn btn-primary col-sm" (click)="onClick()"
+              >You like</a
+            >
+            <div class="col-sm"></div>
+            <a href="#" class="btn btn-danger col-sm">Dont like</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm"></div>
+  </div>
+</div>
+<!-- [ngClass]="{
+  'fas-heart':isActive,
+  'far-heart':!isActive,
+}" -->

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "likes",
@@ -8,14 +8,9 @@ import { Component, OnInit, Input } from "@angular/core";
 export class LikesComponent {
   @Input('isActive') isLiked: boolean;
   @Input() likesCount: number;
-  
-  tweet = {
-    body: 'Some tweet body bod',
-    isLiked: false,
-    likesCount: 0
-  }
 
   onClick() {
+    console.log('this has been clicked');
     this.isLiked = !this.isLiked;
   }
 }
