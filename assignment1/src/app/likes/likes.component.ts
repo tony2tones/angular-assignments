@@ -13,16 +13,18 @@ export class LikesComponent {
   yesClick() {
     console.log('You clicked yes');
     this.isLiked = true;
-    this.likesCount =+ this.likesCount;
+    this.likesCount = this.likesCount + 1;
   }
 
   noClick() {
     console.log('You clicked no');
     this.isLiked = false;
+    this.likesCount = this.likesCount - 1;
   }
 
   toggleClick(){
     console.log('you clicked the heart');
     this.isLiked = !this.isLiked;
+    
   }
 }
