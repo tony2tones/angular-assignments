@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { isSyntheticPropertyOrListener } from '@angular/compiler/src/render3/util';
 
 @Component({
   selector: "likes",
@@ -9,8 +10,19 @@ export class LikesComponent {
   @Input('isActive') isLiked: boolean;
   @Input() likesCount: number;
 
-  onClick() {
-    console.log('this has been clicked');
+  yesClick() {
+    console.log('You clicked yes');
+    this.isLiked = true;
+    this.likesCount =+ this.likesCount;
+  }
+
+  noClick() {
+    console.log('You clicked no');
+    this.isLiked = false;
+  }
+
+  toggleClick(){
+    console.log('you clicked the heart');
     this.isLiked = !this.isLiked;
   }
 }
